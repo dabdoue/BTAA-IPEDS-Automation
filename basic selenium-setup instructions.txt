@@ -1,0 +1,56 @@
+Instructions For Installing Selenium:
+
+Download Anaconda For Windows here:
+https://repo.anaconda.com/archive/Anaconda3-2021.11-Windows-x86_64.exe
+
+In the installer, select the "Add Anaconda3 to my PATH environment variable" checkbox that you will see on the 5th page of the installer.
+
+Now you will be able to use python3 in any cli you wish, whether it be Powershell, CMD, or the Anaconda Prompt that gets installed with Anaconda.
+
+Open up your preferred Terminal and type in the following commands to install some prerequisites:
+conda install -c conda-forge selenium
+pip install chromedriver-autoinstaller
+
+Navigate to the directory where you have the 'auto-ipeds.py' file download, then run 'python auto_ipeds.py' 
+    If you want to get data from certain years, create a file (ex: years_list.txt) and list the years you want data for in descending order like so:
+        2019
+        2018
+        2016
+    Then when you run the python code, now run it with 'python auto_ipeds.py years_list.txt' (name doesn't have to be years_list.txt, can be whatever years list file is called) 
+
+    If you want to get data from certain UnitIDs, use a .uid file with the UnitIDs you want to get data for. An example of one looks like this:
+        151351|Indiana University-Bloomington|Bloomington|IN
+        147767|Northwestern University|Evanston|IL
+        153658|University of Iowa|Iowa City|IA
+        174066|University of Minnesota-Twin Cities|Minneapolis|MN
+        144050|University of Chicago|Chicago|IL
+        214777|Pennsylvania State University-Main Campus|University Park|PA
+        204796|Ohio State University-Main Campus|Columbus|OH
+        240444|University of Wisconsin-Madison|Madison|WI
+        171100|Michigan State University|East Lansing|MI
+        170976|University of Michigan-Ann Arbor|Ann Arbor|MI
+        181464|University of Nebraska-Lincoln|Lincoln|NE
+        243780|Purdue University-Main Campus|West Lafayette|IN
+        145637|University of Illinois at Urbana-Champaign|Champaign|IL
+        186380|Rutgers University-New Brunswick|New Brunswick|NJ
+        163286|University of Maryland-College Park|College Park|MD
+
+    If you do not have a .uid file, you can simply create a file (ex: unitids.txt) and format it like such (be sure to include the "|" character after each UnitID, with no spaces):
+        151351|
+        147767|
+        153658|
+        174066|
+        144050|
+        214777|
+        204796|
+        240444|
+        171100|
+        170976|
+        181464|
+        243780|
+        145637|
+        186380|
+        163286|
+    Then when you run the python code, now run it with 'python auto_ipeds.py unitids.txt' (name doesn't have to be unitids.txt, can be whatever unitID file is called) 
+
+    If you want to specify years and UnitIDs, run 'python auto_ipeds.py unitids.txt years_list.txt' (order of file arguments doesn't matter)

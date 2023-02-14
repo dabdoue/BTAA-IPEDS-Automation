@@ -1,0 +1,64 @@
+
+
+<script type="text/javascript">
+  // let form = document.getElementsByTagName("form")[0];
+  // form.addEventListener("submit", (e) => {
+  //   e.preventDefault();
+  //   alert("Please Wait...");
+  // });
+  function populate_current_big10()
+  {
+      document.getElementById('unitIDs').value = "145637, 153658, 174066, 181464, 147767, 243780, 240444, 151351, 163286, 170976, 171100, 204796, 214777, 186380, 144050";
+  }   
+  function populate_new_big10()
+  {
+      document.getElementById('unitIDs').value = "145637, 153658, 174066, 181464, 147767, 243780, 240444, 151351, 163286, 170976, 171100, 204796, 214777, 186380, 144050, 123961, 110662";
+  }    123961, 110662
+  function populate_new_schools()
+  {
+      document.getElementById('unitIDs').value = "123961, 110662";
+  }
+  function populate_cali()
+  {
+      document.getElementById('unitIDs').value = "123961, 110635, 110644, 110653, 110662, 110671, 110680, 110705, 110714, 118718";
+  }
+  function populate_ivy()
+  {
+      document.getElementById('unitIDs').value = "130794, 166027, 182670, 186131, 190415, 190150, 217156, 215062";
+  }
+  function populate_library_group()
+  {
+      document.getElementById('unitIDs').value = "144050, 145600, 145637, 147767, 148654, 151102, 151111, 151333, 151342, 151351, 151360, 151379, 151388, 152248, 152266, 153603, 153658, 154095, 163286, 170976, 171100, 171137, 171146, 174066, 174075, 174233, 174251, 181464, 186380, 204662, 204671, 204680, 204699, 204705, 204796, 212018, 214591, 214607, 214616, 214625, 214634, 214643, 214652, 214670, 214689, 214698, 214704, 214713, 214731, 214740, 214759, 214768, 214777, 214786, 214795, 214801, 214810, 214829, 240189, 240268, 240277, 240329, 240365, 240374, 240417, 240426, 240435, 240444, 240453, 240462, 240471, 240480, 243780";
+  }
+  function get_data()
+  {
+    alert('Please Wait...');
+  }
+
+  
+  
+</script>
+<body onload="document.getElementById('wait-message').style.display='none'"></body>
+<input type="button" onclick="populate_current_big10()" value="Current Big10">
+<input type="button" onclick="populate_new_big10()" value="New Big10">
+<input type="button" onclick="populate_new_schools()" value="USC and UCLA">
+<input type="button" onclick="populate_cali()" value="California Schools">
+<input type="button" onclick="populate_ivy()" value="Ivy League Schools">
+<input type="button" onclick="populate_library_group()" value="Library Group">
+
+<form action="{{ url_for('get_big_ten_data') }}" method="post">
+  <input type="text" name="unitIDs" id="unitIDs" required="true">
+  <input type="text" name="years" required="true" placeholder="Desired Years (ex: 2020, 2019)">
+  <input type="submit" onclick="document.getElementById('wait-message').style.display = 'block'" name="button" class="btn btn-success" value="Send Request">
+</form>
+
+<div id="wait-message">
+  <h2>
+    Please Wait For Data To Be Retrieved, File Will Be Downloaded Shortly
+  </h2>
+</div>
+
+
+
+
+
