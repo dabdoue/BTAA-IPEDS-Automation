@@ -8,4 +8,6 @@ Selenium structure is built with future-proofing in mind, with easy functions th
 
 Requires pandas, selenium, chromedriver_autoinstaller
 
-Run with `flask run`
+To run, simply run `flask run`
+
+To run so that all devices on the same network can access the application, run `flask run --host=0.0.0.0` - this will make the application accessible by going to the server's IP address, then the port of the application (by default 5000). (ex: http://10.192.XX.XXX:5000)
